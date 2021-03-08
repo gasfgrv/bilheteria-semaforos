@@ -2,7 +2,7 @@ package gusto.fatec.bilheteria.view;
 
 import java.util.concurrent.Semaphore;
 
-import gusto.fatec.bilheteria.controller.pessoaThread;
+import gusto.fatec.bilheteria.controller.PessoaThread;
 
 public class Main {
 
@@ -10,7 +10,7 @@ public class Main {
 		Semaphore semaforo = new Semaphore(1);
 		
 		for (int i = 0; i < 300; i++) {
-			Thread compraIngressos = new pessoaThread(i,semaforo);
+			Thread compraIngressos = new PessoaThread(i,semaforo);
 			compraIngressos.start();
 		}
 	}
